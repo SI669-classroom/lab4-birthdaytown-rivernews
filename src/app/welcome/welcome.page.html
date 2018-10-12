@@ -1,0 +1,12 @@
+<ng-container *ngIf="isFirstTime" >
+    <ion-content padding>
+        <div class="full-screen-height">
+            <div class="headline">
+                <h1>Welcome to Birthday Town {{ isFirstTime ? "First Time!": "Already!" }}</h1>
+            </div>
+            <div class="headline-action-items">
+                <ion-button expand="block" (click)="onClickGetStarted()">Get Started</ion-button>
+            </div>
+        </div>
+    </ion-content>
+</ng-container>

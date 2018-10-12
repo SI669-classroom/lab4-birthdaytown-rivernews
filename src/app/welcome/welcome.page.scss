@@ -1,0 +1,27 @@
+// CSS BEM http://getbem.com/introduction/
+
+@mixin flex-column-center-stretch-mixin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: stretch;
+}
+
+.full-screen-height {
+    height: 100vh;
+
+    @include flex-column-center-stretch-mixin();
+    
+    .headline {
+        text-align: center;
+    }
+
+    .headline-action-items {
+        
+        @include flex-column-center-stretch-mixin();
+
+        & > * {
+
+        }
+    }
+}

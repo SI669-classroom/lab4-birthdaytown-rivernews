@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>My Cake</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+        <ion-item>
+            <ion-label>Cake Type</ion-label>
+            <ion-select interface="action-sheet" [ngModel]="cakeType" (ngModelChange)="onCakeTypeChange($event)" >
+                <ion-select-option value="vanilla">Vanilla</ion-select-option>
+                <ion-select-option value="strawberry">Strawberry</ion-select-option>
+                <ion-select-option value="chocolate">Chocolate</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>Frosting</ion-label>
+            <ion-select interface="action-sheet" [ngModel]="cakeFrosting" (ngModelChange)="onCakeFrostingChange($event)">
+                <ion-select-option value="basic-whipped-cream">Basic Whipped Cream</ion-select-option>
+                <ion-select-option value="cream-cheese">Cream Cheese</ion-select-option>
+                <ion-select-option value="swiss-meringue">Swiss Meringue</ion-select-option>
+                <ion-select-option value="italian-meringue">Italian Meringue</ion-select-option>
+                <ion-select-option value="french-meringue">French Meringue</ion-select-option>
+                <ion-select-option value="ganache">Ganache</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>
+                Gluten-free
+            </ion-label>
+            
+            <!-- https://beta.ionicframework.com/docs/api/toggle -->
+            <ion-toggle [ngModel]="isGlutenFree" (ngModelChange)="onCakeGlutenFreeChange($event)" ></ion-toggle> 
+        </ion-item>
+    </ion-list>
+
+    <ion-button color="light" (click)="onClickPrevious()">Previous</ion-button>
+    <ion-button (click)="onClickNext()">Next</ion-button>
+</ion-content>

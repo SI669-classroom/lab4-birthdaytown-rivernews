@@ -1,12 +1,14 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      Birthday Town
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs">docs</a> will be your guide.</p>
+  <h1>Hi {{name}}!</h1>
+  <h2>It <u>{{ isBirthday ? 'IS' : 'is NOT' }}</u> your birthday!</h2>
+  <ion-button color="danger" (click)="confirmResetProfile()">Reset Profile</ion-button>
+  <ion-button (click)="onClickEditProfile()">Edit Profile</ion-button>
 </ion-content>

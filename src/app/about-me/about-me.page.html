@@ -1,0 +1,22 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>About Me</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+        <ion-item>
+            <ion-label>Name</ion-label>
+            <ion-input [(ngModel)]="name" (ionBlur)="onNameChange()" type="text" placeholder="John August" ></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Birthday</ion-label>
+            <ion-datetime [ngModel]="birthdayUIValue" (ngModelChange)="onBirthdayChange($event)" displayFormat="YYYY MMMM D" pickerFormat="YYYY MMMM D" placeholder="1990 July 15" ></ion-datetime>
+        </ion-item>
+    </ion-list>
+
+
+    <ion-button color="light" (click)="onClickPrevious()">Previous</ion-button>
+    <ion-button (click)="onClickNext()">Next</ion-button>
+</ion-content>

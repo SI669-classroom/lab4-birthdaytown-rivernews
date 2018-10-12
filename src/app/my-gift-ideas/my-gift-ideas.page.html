@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>My Gift Ideas</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+        <ion-item-sliding *ngFor="let entry of giftItems">
+            <ion-item>
+                <ion-label>{{entry.title}}</ion-label>
+                <ion-checkbox [(ngModel)]="entry.isChecked" (ngModelChange)="onChechboxChange(entry)"  ></ion-checkbox>
+            </ion-item>
+            <ion-item-options>
+                <button ion-button icon-only color="danger" (click)="deleteGiftIdea(entry)"><ion-icon name="trash"></ion-icon>
+                    Delete
+                </button>
+            </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>
+    <ion-button color="light" (click)="onClickPrevious()">Previous</ion-button>
+    <ion-button (click)="onClickNext()">Next</ion-button>
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button (click)="presentAlertPrompt()" >
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+
+</ion-content>
