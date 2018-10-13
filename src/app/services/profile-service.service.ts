@@ -16,17 +16,7 @@ export class ProfileServiceService {
     constructor(
         private storage: Storage
     ) {
-        // this.profileDidLoaded = new Promise((resolve, reject) => {
-        //     console.log('Promise in service constructor')
-
-        //     this.loadProfile().then(() => {
-        //         console.log('loadProfile() finished.')
-        //         resolve(true);
-        //     });
-        // });
-
         this.profileDidLoaded = this.loadProfile();
-
     }
 
     async loadProfile() {
